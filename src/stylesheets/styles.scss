@@ -27,8 +27,7 @@ body {
   font-family: 'Gill Sans', serif;
 }
 
-section,
-footer {
+.section-wrapper {
   padding: 2em;
 }
 
@@ -37,14 +36,48 @@ footer {
   flex-direction: column;
 }
 
-.splash > * {
+.splash .section-wrapper > * {
   display: flex;
   align-items: center;
+}
+
+.background-svg {
+  height: 100vh;
+  width: 100vw;
+  background: antiquewhite;
+  position: absolute;
+  z-index: -1;
+
+  svg {
+    .st0 {
+      fill: #d0ffa0;
+    }
+
+    .st1 {
+      fill: #ff6767;
+    }
+  }
 }
 
 .header {
   justify-content: space-between;
   flex: 1;
+}
+
+.menu-btn {
+  .cls-1,
+  .cls-3 {
+    fill: none;
+  }
+
+  .cls-1 {
+    stroke: #000;
+    stroke-width: 2px;
+  }
+
+  .cls-2 {
+    stroke: none;
+  }
 }
 
 .headings {
@@ -64,4 +97,14 @@ footer {
   flex-direction: column;
   justify-content: center;
   flex: 2;
+}
+
+.logo-container img,
+.menu-btn svg {
+  width: 70px;
+  height: 70px;
+}
+
+section.artists {
+  background-color: white;
 }
