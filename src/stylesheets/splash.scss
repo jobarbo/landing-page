@@ -1,0 +1,42 @@
+
+.splash {
+  height: 100vh;
+  flex-direction: column;
+
+  .section-wrapper {
+    height: calc(100% - 4em);
+  }
+
+  .content {
+    height: calc(100% - 75px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .headings {
+      font-size: 60px;
+      font-family: 'Monument', sans-serif;
+      text-transform: uppercase;
+      text-align: center;
+
+      .main-title,
+      .subtitle {
+        margin: 0;
+      }
+
+      .subtitle {
+        font-size: 2.2em;
+        -webkit-text-stroke: 3px $black;
+        color: transparent;
+      }
+    }
+
+    .headings,
+    .partner {
+      margin-top: 1em;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+}

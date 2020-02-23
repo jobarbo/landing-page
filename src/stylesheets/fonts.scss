@@ -1,0 +1,25 @@
+// Load CSS Reset from NPM
+@mixin font-face($family, $path, $weight: normal, $style: normal,$size: $font-size-default) {
+  @font-face {
+    font-family: $family;
+    src: url('#{$path}.ttf') format('truetype');
+    font-weight: $weight;
+    font-style: $style;
+    font-size: $size;
+  }
+}
+
+$font-size-default: 20;
+$line-height-default: 1.25;
+$text-color-default: $black;
+
+$gill: 'Gill Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$monument: 'Monument', $gill;
+
+@include font-face('Gill Sans', '../fonts/GillSans');
+@include font-face('Monument', '../fonts/MonumentExtended-Regular');
+
+h1,
+h2 {
+  font-family: $monument;
+}

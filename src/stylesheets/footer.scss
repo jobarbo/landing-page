@@ -1,0 +1,46 @@
+footer {
+  background-color: $black;
+  color: $white;
+
+  .section-wrapper {
+    padding: 5em;
+  }
+
+  .top-footer {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px $white solid;
+    padding-bottom: 2em;
+  }
+
+  .social {
+    width: 20%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .bottom-footer {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 2em;
+
+    .description {
+      flex: 1;
+
+      p {
+        margin: 0;
+      }
+    }
+
+    .copyright {
+      flex: 2;
+      display: flex;
+      justify-content: flex-end;
+      align-items: flex-end;
+
+      a {
+        text-decoration: underline;
+      }
+    }
+  }
+}

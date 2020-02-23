@@ -1,0 +1,39 @@
+section.artists {
+  .section-wrapper {
+    display: flex;
+  }
+
+  .title-wrapper {
+    width: 25em;
+    display: table;
+    top: 10%;
+    left: 0;
+    transform: translateZ(0) rotate(-90deg) translateX(-100%) translateY(2.5rem);
+    transform-origin: top left;
+    position: sticky;
+    border-bottom: 1px solid black;
+    transition: border 0.5s ease;
+
+    .title {
+      color: $salmon;
+      font-size: 40px;
+      text-transform: uppercase;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      width: auto;
+    }
+  }
+
+  .artists-grid {
+    width: 80vw;
+  }
+}
+
+.black-bg {
+  .artists {
+    .title-wrapper {
+      border-bottom: 1px solid $white;
+    }
+  }
+}
