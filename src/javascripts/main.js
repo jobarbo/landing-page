@@ -5,9 +5,10 @@
 // ======================== //
 const body = document.querySelector('body');
 const div = document.querySelector('.artists-grid');
+// const scrollSwitch = document.querySelector('.alaclair');
 
 function changeBackground() {
-  const slideInAt = (window.scrollY + window.innerHeight) - div.offsetHeight;
+  const slideInAt = (div.scrollTop) - div.offsetHeight;
   const isHalfShown = slideInAt >= div.offsetTop;
 
   if (isHalfShown) {
@@ -38,7 +39,10 @@ function debounce(func, wait, immediate) {
 }
 /* eslint-enable */
 
-window.addEventListener('scroll', debounce(changeBackground, 20, true));
+div.addEventListener('scroll', debounce(changeBackground, 1, true));
 
 // ======================== //
 // SCROLL COLOR //
+
+// SCROLL PARALLAX //
+// ======================== //
