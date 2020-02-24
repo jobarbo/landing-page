@@ -49,8 +49,8 @@ grid.addEventListener('scroll', debounce(changeBackground, 1, true));
 const menuBtn = document.querySelector('[data-menu]');
 
 menuBtn.addEventListener('click', (e) => {
-  console.log('clicked');
+  console.log('active');
   console.log(e);
   console.log(menuBtn);
-  menuBtn.classList.toggle('clicked');
+  menuBtn.classList.toggle('active');
 });

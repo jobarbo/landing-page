@@ -1,112 +1,48 @@
-@mixin btn() {
-  transition-duration: 0.5s;
-  transform-origin: center;
-}
-
-@mixin icon($height, $width) {
-  height: $height;
-  width: $width;
-  transition-duration: 0.5s;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-@mixin icon-before($height, $width, $top) {
-  transition-duration: 0.5s;
-  width: $width;
-  height: $height;
-  position: relative;
-  display: block;
-  background-color: $charcoal;
-  content: "";
-  top: $top;
-}
-
-@mixin icon-after($height, $width, $top) {
-  transition-duration: 0.5s;
-  position: relative;
-  width: $width;
-  height: $height;
-  display: block;
-  background-color: #212121;
-  content: "";
-  top: $top;
-}
-
-@mixin icon-circle($height, $width) {
-  height: $height;
-  width: $width;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 100%;
-  background: transparent;
-  border: 2px solid black;
-  transition-duration: 0.2s;
-  transform-origin: center;
-}
-
 .header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex: 1;
 
+  .logo-container {
+    img {
+      height: 60px;
+    }
+  }
+
   .menu-btn {
-    @include btn();
+    width: 60px;
+    height: 60px;
 
-    .icon-circle {
-      @include icon-circle(60px, 60px);
+    #menu {
+      overflow: initial;
     }
 
-    .icon {
-      @include icon(4px, 30px);
-
-      border-radius: 4px;
-
-      &::before {
-        @include icon-before(4px, 30px, -4px);
-
-        border-radius: 4px;
-      }
-
-      &::after {
-        @include icon-after(4px, 30px, 6px);
-
-        border-radius: 4px;
-      }
-    }
-
-    &.clicked {
-      .icon {
-        transition-duration: 0.5s;
-        background: transparent;
-
-        &::before {
-          transform: rotateZ(45deg) scaleX(1.25) translate(3.5px, 3.5px);
-        }
-
-        &::after {
-          transform: rotateZ(-45deg) scaleX(1.25) translate(5px, -5px);
-        }
-      }
+    #line1,
+    #line2,
+    #circle {
+      transform-box: fill-box;
+      transform-origin: center;
+      transition: 0.4s linear;
     }
 
     &:hover {
       cursor: pointer;
 
-      .icon {
-        &::before {
-          transform: translate(-3.5px, 3.5px);
-        }
+      #circle,
+      #line1,
+      #line2 {
+        stroke-width: 4px !important;
+      }
+    }
 
-        &::after {
-          transform: translate(3.5px, -3.5px);
-        }
+    &.active {
+      #line1 {
+        transform: translate(0, -6.5px) rotate(50deg) scaleX(1.25);
+      }
+
+      #line2 {
+        transform: translate(0, 6.5px) rotate(-50deg) scaleX(1.25);
       }
     }
   }
