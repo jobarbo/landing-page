@@ -4,12 +4,12 @@
 // SCROLL COLOR //
 // ======================== //
 const body = document.querySelector('body');
-const div = document.querySelector('.artists-grid');
+const grid = document.querySelector('.artists-grid');
 // const scrollSwitch = document.querySelector('.alaclair');
 
 function changeBackground() {
-  const slideInAt = (div.scrollTop) - div.offsetHeight;
-  const isHalfShown = slideInAt >= div.offsetTop;
+  const slideInAt = (grid.scrollTop) - grid.offsetHeight;
+  const isHalfShown = slideInAt >= grid.offsetTop;
 
   if (isHalfShown) {
     body.classList.add('black-bg');
@@ -39,10 +39,18 @@ function debounce(func, wait, immediate) {
 }
 /* eslint-enable */
 
-div.addEventListener('scroll', debounce(changeBackground, 1, true));
+grid.addEventListener('scroll', debounce(changeBackground, 1, true));
 
 // ======================== //
 // SCROLL COLOR //
 
-// SCROLL PARALLAX //
+// HAMBURGER NAV //
 // ======================== //
+const menuBtn = document.querySelector('[data-menu]');
+
+menuBtn.addEventListener('click', (e) => {
+  console.log('clicked');
+  console.log(e);
+  console.log(menuBtn);
+  menuBtn.classList.toggle('clicked');
+});

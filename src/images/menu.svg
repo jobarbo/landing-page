@@ -1,26 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="84" height="83" viewBox="0 0 84 83">
+<svg id="Calque_1" data-name="Calque 1"
+  xmlns="http://www.w3.org/2000/svg" viewBox="0 0 84 83">
   <defs>
-    <style>
-      .cls-1, .cls-3 {
-        fill: none;
-      }
-
-      .cls-1 {
-        stroke: #000;
-        stroke-width: 2px;
-      }
-
-      .cls-2 {
-        stroke: none;
-      }
-    </style>
+    <style>.cls-1,.cls-2{fill:none;}.cls-2{stroke:#000;stroke-width:2px;}</style>
   </defs>
-  <g id="menu" transform="translate(-1786 -50)">
-    <g id="Ellipse_3" data-name="Ellipse 3" class="cls-1" transform="translate(1786 50)">
-      <ellipse class="cls-2" cx="42" cy="41.5" rx="42" ry="41.5"/>
-      <ellipse class="cls-3" cx="42" cy="41.5" rx="41" ry="40.5"/>
+  <title>menu</title>
+  <g id="menu">
+    <g id="Ellipse_3" data-name="Ellipse 3">
+      <ellipse class="cls-1" cx="42" cy="41.5" rx="42" ry="41.5"/>
+      <ellipse class="cls-2" cx="42" cy="41.5" rx="41" ry="40.5"/>
     </g>
-    <line id="Ligne_1" data-name="Ligne 1" class="cls-1" x2="27" transform="translate(1814.5 98.5)"/>
-    <line id="Ligne_2" data-name="Ligne 2" class="cls-1" x2="27" transform="translate(1814.5 85.5)"/>
+    <line id="Ligne_1" data-name="Ligne 1" class="cls-2" x1="28.5" y1="48.5" x2="55.5" y2="48.5"/>
+    <line id="Ligne_2" data-name="Ligne 2" class="cls-2" x1="28.5" y1="35.5" x2="55.5" y2="35.5"/>
   </g>
 </svg>
