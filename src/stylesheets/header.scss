@@ -5,6 +5,8 @@
   flex: 1;
 
   .logo-container {
+    z-index: 5;
+
     img {
       height: 60px;
     }
@@ -13,6 +15,7 @@
   .menu-btn {
     width: 60px;
     height: 60px;
+    z-index: 5;
 
     #menu {
       overflow: initial;
@@ -23,7 +26,7 @@
     #circle {
       transform-box: fill-box;
       transform-origin: center;
-      transition: 0.4s linear;
+      transition: 0.2s linear;
     }
 
     &:hover {
@@ -38,11 +41,11 @@
 
     &.active {
       #line1 {
-        transform: translate(0, -6.5px) rotate(50deg) scaleX(1.25);
+        transform: translate(0, -6.5px) rotate(40deg) scaleX(1.5);
       }
 
       #line2 {
-        transform: translate(0, 6.5px) rotate(-50deg) scaleX(1.25);
+        transform: translate(0, 6.5px) rotate(-40deg) scaleX(1.5);
       }
     }
   }
