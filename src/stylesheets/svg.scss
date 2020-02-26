@@ -16,8 +16,17 @@
     }
 
     #Tracé_3 {
-      transform-origin: right;
+      transform-origin: top right;
       transform: scale(1);
+      transition: all 0.5s ease;
+    }
+  }
+}
+
+.menu-activated .background-svg {
+  svg {
+    #Tracé_3 {
+      transform: scale(4);
     }
   }
 }

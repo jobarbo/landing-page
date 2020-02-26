@@ -47,9 +47,9 @@ grid.addEventListener('scroll', debounce(changeBackground, 1, true));
 // HAMBURGER NAV //
 // ======================== //
 const menuBtn = document.querySelector('[data-menu]');
-const nav = document.querySelector('[data-nav]');
+const theBody = document.querySelector('body');
 
 menuBtn.addEventListener('click', () => {
+  theBody.classList.toggle('menu-activated');
   menuBtn.classList.toggle('active');
-  nav.classList.toggle('active');
 });

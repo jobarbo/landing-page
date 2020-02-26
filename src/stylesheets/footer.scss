@@ -2,6 +2,15 @@ footer {
   background-color: $black;
   color: $white;
 
+  a {
+    border-bottom: 1px solid transparent;
+    transition: all 0.5s ease;
+
+    &:hover {
+      border-bottom: 1px solid $white;
+    }
+  }
+
   .section-wrapper {
     padding: 5em;
   }
@@ -40,6 +49,10 @@ footer {
 
       a {
         text-decoration: underline;
+
+        &:hover {
+          border-bottom: none;
+        }
       }
     }
   }
