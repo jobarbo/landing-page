@@ -15,6 +15,10 @@ body {
   min-height: 100%;
   margin: 0 auto;
   color: $black;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+  transform-style: preserve-3d;
   font-family: 'Gill Sans', serif;
   transition: background-color 0.7s ease-out, color 0.5s ease-in;
 }

@@ -1,10 +1,9 @@
 section.artists {
   min-height: 160vh;
+  overflow: auto;
 
   .section-wrapper {
     display: flex;
-    position: sticky;
-    top: 0;
   }
 
   .title-wrapper {
@@ -31,10 +30,8 @@ section.artists {
 
   .artists-grid {
     width: 80vw;
-    perspective: 1px;
     height: 100vh;
-    overflow-x: hidden;
-    overflow-y: auto;
+    top: 0;
   }
 
   .artist {
