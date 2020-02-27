@@ -42,7 +42,6 @@ function debounce(func, wait, immediate) {
 grid.addEventListener('scroll', debounce(changeBackground, 1, true));
 
 // ======================== //
-// SCROLL COLOR //
 
 // HAMBURGER NAV //
 // ======================== //
@@ -53,3 +52,4 @@ menuBtn.addEventListener('click', () => {
   theBody.classList.toggle('menu-activated');
   menuBtn.classList.toggle('active');
 });
+// ======================== //
