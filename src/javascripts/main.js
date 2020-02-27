@@ -5,10 +5,10 @@
 // ======================== //
 const body = document.querySelector('body');
 const grid = document.querySelector('.artists-grid');
-// const scrollSwitch = document.querySelector('.alaclair');
 
 function changeBackground() {
-  const slideInAt = (grid.scrollTop) - grid.offsetHeight;
+  console.log('changeBackground()');
+  const slideInAt = (window.scrollY + window.innerHeight) - grid.offsetHeight;
   const isHalfShown = slideInAt >= grid.offsetTop;
 
   if (isHalfShown) {
@@ -42,7 +42,6 @@ function debounce(func, wait, immediate) {
 grid.addEventListener('scroll', debounce(changeBackground, 1, true));
 
 // ======================== //
-// SCROLL COLOR //
 
 // HAMBURGER NAV //
 // ======================== //
@@ -50,6 +49,11 @@ const menuBtn = document.querySelector('[data-menu]');
 const theBody = document.querySelector('body');
 
 menuBtn.addEventListener('click', () => {
+  console.log('click');
   theBody.classList.toggle('menu-activated');
   menuBtn.classList.toggle('active');
 });
+// ======================== //
+
+// PARALLAX SCROLL //
+// ======================== //
