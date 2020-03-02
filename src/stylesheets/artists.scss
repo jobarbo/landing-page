@@ -10,6 +10,7 @@ section.artists {
   .title-wrapper {
     width: 25em;
     display: table;
+    margin-top: 5em;
     top: 10%;
     left: 0;
     transform: translateZ(0) rotate(-90deg) translateX(-100%) translateY(2.5rem);
@@ -30,15 +31,25 @@ section.artists {
   }
 
   .artists-grid {
-    width: 80vw;
+    width: 90vw;
   }
 
   .artist {
     position: relative;
-    min-height: 75vh;
+    min-height: 60vh;
 
     .floating-image {
       position: absolute;
+
+      &:hover {
+        .hover-blur {
+          opacity: 1;
+        }
+
+        img {
+          filter: blur(4px);
+        }
+      }
     }
 
     img {
@@ -64,41 +75,30 @@ section.artists {
       z-index: 1;
       transition: all 0.2s ease;
     }
-
-    &:hover {
-      .hover-blur {
-        opacity: 1;
-      }
-
-      img {
-        filter: blur(4px);
-      }
-    }
-  }
-
-  .floating-image {
-    height: 100%;
   }
 
   .foals .floating-image {
-    right: 0;
+    right: 0%;
+    top: 20%;
     z-index: 4;
   }
 
   .loud .floating-image {
-    left: 0;
+    bottom: 0%;
+    left: 0%;
     z-index: 2;
   }
 
   .alaclair .floating-image {
-    right: 5%;
-    z-index: 3;
+    right: 10%;
+    bottom: 10%;
+    z-index: 1;
   }
 
   .daywave .floating-image {
     left: 10%;
-    bottom: 30%;
-    z-index: 1;
+    top: 0%;
+    z-index: 3;
   }
 }
 

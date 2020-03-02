@@ -48,7 +48,6 @@ const menuBtn = document.querySelector('[data-menu]');
 const theBody = document.querySelector('body');
 
 menuBtn.addEventListener('click', () => {
-  console.log('click');
   theBody.classList.toggle('menu-activated');
   menuBtn.classList.toggle('active');
 });
@@ -57,30 +56,30 @@ menuBtn.addEventListener('click', () => {
 // PARALLAX SCROLL //
 // ======================== //
 
-const picture = document.querySelector('.loud .floating-image');
+const pictures = document.querySelectorAll('.floating-image');
 
-function onScroll() {
+function animateParallax() {
   let startPos;
-  const speed = picture.dataset;
-  console.log(speed);
-
-  function animateParallax() {
-    const fromTop = window.pageYOffset;
+  const fromTop = window.pageYOffset;
+  pictures.forEach((singlePic) => {
+    const picture = singlePic;
+    const data = picture.dataset;
     const rect = picture.getBoundingClientRect();
     let scrollDelta = '';
     if ((rect.top - window.innerHeight) <= 0 && rect.bottom > 0) {
       if (startPos === undefined) {
         startPos = fromTop;
       }
-    } else {
-      startPos = 0;
-      return;
     }
-    scrollDelta = (fromTop - startPos / 1.25) * 1;
+    scrollDelta = (fromTop - startPos / data.speed) * 1;
     picture.style.transform = `translateY(${scrollDelta}px)`;
-  }
+  });
+}
+
+function onScroll() {
   animateParallax();
   return animateParallax;
 }
+
 
 window.addEventListener('scroll', debounce(onScroll, 1, true));

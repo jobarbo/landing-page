@@ -40,17 +40,19 @@
 }
 
 .nav-link {
-  font-family: $monument;
-  text-transform: uppercase;
-  font-size: 90px;
-  margin: 0.1em 0;
-  color: $black;
-  -webkit-text-stroke: 3px $black;
-  transition: all 0.5s ease;
+  a {
+    font-family: $monument;
+    text-transform: uppercase;
+    font-size: 90px;
+    margin: 0.1em 0;
+    color: $black;
+    -webkit-text-stroke: 3px $black;
+    transition: all 0.5s ease;
 
-  &:hover {
-    cursor: pointer;
-    color: transparent;
+    &:hover {
+      cursor: pointer;
+      color: transparent;
+    }
   }
 }
 
