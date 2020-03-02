@@ -5,10 +5,9 @@
 // ======================== //
 const body = document.querySelector('body');
 const grid = document.querySelector('.artists-grid');
-// const scrollSwitch = document.querySelector('.alaclair');
 
 function changeBackground() {
-  const slideInAt = (grid.scrollTop) - grid.offsetHeight;
+  const slideInAt = (window.scrollY + window.innerHeight) - grid.offsetHeight;
   const isHalfShown = slideInAt >= grid.offsetTop;
 
   if (isHalfShown) {
@@ -39,7 +38,7 @@ function debounce(func, wait, immediate) {
 }
 /* eslint-enable */
 
-grid.addEventListener('scroll', debounce(changeBackground, 1, true));
+window.addEventListener('scroll', debounce(changeBackground, 1, true));
 
 // ======================== //
 
@@ -53,3 +52,34 @@ menuBtn.addEventListener('click', () => {
   menuBtn.classList.toggle('active');
 });
 // ======================== //
+
+// PARALLAX SCROLL //
+// ======================== //
+
+const pictures = document.querySelectorAll('.floating-image');
+
+function animateParallax() {
+  let startPos;
+  const fromTop = window.pageYOffset;
+  pictures.forEach((singlePic) => {
+    const picture = singlePic;
+    const data = picture.dataset;
+    const rect = picture.getBoundingClientRect();
+    let scrollDelta = '';
+    if ((rect.top - window.innerHeight) <= 0 && rect.bottom > 0) {
+      if (startPos === undefined) {
+        startPos = fromTop;
+      }
+    }
+    scrollDelta = (fromTop - startPos / data.speed) * 1;
+    picture.style.transform = `translateY(${scrollDelta}px)`;
+  });
+}
+
+function onScroll() {
+  animateParallax();
+  return animateParallax;
+}
+
+
+window.addEventListener('scroll', debounce(onScroll, 1, true));
